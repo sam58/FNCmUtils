@@ -22,7 +22,7 @@ import java.util.Map;
  * Created by pkupershteyn on 03.06.2016.
  */
 public abstract class FnExecutor {
-    private List<CmParameter> cmParameters;
+    private final List<CmParameter> cmParameters;
 
     static private final CommandLineParser PARSER = new DefaultParser();
 
@@ -32,7 +32,7 @@ public abstract class FnExecutor {
     protected static final CmParameter CMPARM_OS = new CmParameter("objectStore", "s", true, "An object store to connect to", true, null);
 
     public static class InvalidParametersException extends Exception {
-        private CmParameter cmParameter;
+        private final CmParameter cmParameter;
         public InvalidParametersException(CmParameter parameter, String message) {
             super(message);
             cmParameter=parameter;
@@ -53,7 +53,7 @@ public abstract class FnExecutor {
 
     public static class CmParameter {
         private final String name;
-        private String shortName;
+        private final String shortName;
         private final boolean hasArgs;
         private final String descr;
         private final boolean mandatory;

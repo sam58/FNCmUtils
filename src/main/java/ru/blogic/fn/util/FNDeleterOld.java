@@ -45,7 +45,7 @@ public class FNDeleterOld {
         pageSize("s", true, "Size of chunks to delete", false, "500"),
         folderStructure("f", true, "Folder to delete (with substructure)", false, null);
 
-        private String shortName;
+        private final String shortName;
         private final boolean hasArgs;
         private final String descr;
         private final boolean mandatory;

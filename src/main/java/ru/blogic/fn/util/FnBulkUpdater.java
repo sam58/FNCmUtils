@@ -15,7 +15,7 @@ public class FnBulkUpdater extends FnSelectExecutor {
 
     protected static final CmParameter PARM_FIELDVALUES = new CmParameter("fieldValues", "v", true, "Field values to update, 'field1=value,filed2=value ...'", true, null);
 
-    private Map<String, Object> paramValues = new HashMap<String, Object>();
+    private final Map<String, Object> paramValues = new HashMap<String, Object>();
 
 
     public static void main(String[] args) {
